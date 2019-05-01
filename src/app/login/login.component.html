@@ -1,0 +1,64 @@
+<section class="login-block mt-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 login-sec">
+        <h2 class="text-center">Login Now</h2>
+         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label class="text-uppercase">Email</label>
+          <input type="email" autocomplete="single" formControlName="email" 
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }" 
+          class="form-control" placeholder="Email...">
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email is required</div>
+              <div *ngIf="f.email.errors.email">Please enter valid Email.</div>
+            </div>
+        </div>
+        <div class="form-group">
+          <label class="text-uppercase">Password</label>
+          <input type="password" formControlName="password" 
+          [ngClass]="{ 'is-invalid': submitted && f.password.errors }" 
+          class="form-control" placeholder="Password...">
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            </div>
+        </div>
+
+
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input">
+            <small>Remember Me</small>
+          </label>
+          <button type="submit" class="btn btn-primary float-right">Login</button>
+        </div>
+        </form>
+
+        <!-- <div class="copy-text">Created with <i class="fa fa-heart"></i> by Grafreez</div> -->
+      </div>
+      <div class="col-md-8 banner-sec">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="https://static.pexels.com/photos/33972/pexels-photo.jpg"
+                alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>This is Heaven</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
